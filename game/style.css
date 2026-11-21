@@ -1,0 +1,36 @@
+/* Lantern Lane's page: a dark felt table the canvas sits on, centred and
+   scaled to fit while keeping its 1280x720 shape. All of the game's own
+   looks are painted on the canvas itself; this sheet only frames it. */
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background: #10121b;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+#game {
+  display: block;
+  width: min(100vw, calc(100vh * 16 / 9));
+  height: auto;
+  aspect-ratio: 16 / 9;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+/* Read aloud, never shown: the status line screen readers announce. */
+#status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
